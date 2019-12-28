@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="{% static 'bd_map/img/favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'bd_map/css/style.css' %}">
+    <title>Sales Monitoring System - Home</title>
+
+</head>
+<body><br>
+<h1>Welcome to Sales Monitoring System</h1>
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          <strong>Error!</strong> {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+<a href="{% url 'bd_map:upload' %}">
+    <button>Upload Excel File</button>
+</a>
+
+<br>
+<a href="{% url 'bd_map:top_sales' %}">
+    <button>Top Ten Sales Area</button>
+</a>
+
+<br>
+<a href="{% url 'bd_map:top_changed_sales' %}">
+    <button>Top Ten Sales Figure Changed Areas
+    </button>
+</a>
+
+<br>
+<a href="{% url 'bd_map:map' %}">
+    <button>Graph Information System (Map)</button>
+</a>
+<br>
+
+
+<a style="text-decoration: none;" href="{% static 'bd_map/files/Division_District_Upazilla_hiarachy.xlsx' %}"
+   title="Download and Edit the last three columns">
+    <button>Download Sample Excel File</button>
+</a>
+
+
+<br>
+<hr style="border-top: 1px solid #4CAF50;">
+
+{#        {% for row in excel_data %}#}
+{#            {% for cell in row %}#}
+{#                {{ cell }}&nbsp;&nbsp;#}
+{#            {% endfor %}#}
+{#            <br>#}
+{#        {% endfor %}#}
+</body>
+</html>

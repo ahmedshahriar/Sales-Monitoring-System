@@ -1,0 +1,162 @@
+* {
+    text-align: center;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+/*Home Page*/
+
+button,input {
+    background-color: white;
+    border: 2px solid #4CAF50;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+}
+input:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/*Map */
+
+svg {
+    max-width: 100% !important;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.heyo:hover {
+    fill: #c5c6cc; /* on hover color of the district */
+    transition: 0.3s;
+}
+
+.enabled {
+    cursor: none;
+}
+
+.description {
+    pointer-events: none;
+    position: absolute;
+    font-size: 18px;
+    text-align: center;
+    background: white;
+    padding: 10px 15px;
+    z-index: 5;
+    height: 117px;
+    line-height: 21px;
+    margin: 0 auto;
+    color: #21669e;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #eee;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: none;
+}
+
+.description.active {
+    display: block;
+}
+
+.description:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    margin-left: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+}
+
+/*Top Ten Lists*/
+
+.tableTopList {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tableTopList td, .tableTopList th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.tableTopList tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tableTopList tr:hover {
+    background-color: #ddd;
+}
+
+.tableTopList th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.chartContainer {
+    width: 80%;
+    margin: 20px auto;
+
+}
+
+.tableContainer {
+    overflow-x: auto;
+    width: 80%;
+    margin: 20px auto;
+    min-height: 500px;
+    align-content: center;
+}
+
+#topDistrict,#topChangedDistrict {
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        width: 100%;
+        margin: 15px auto;
+
+    }
+}
+
+
+/*Alert box*/
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}

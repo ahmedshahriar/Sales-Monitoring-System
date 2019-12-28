@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="{% static 'bd_map/img/favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'bd_map/css/style.css' %}">
+    <title>Sales Monitoring System - Upload </title>
+</head>
+<body>
+<h2>Upload Excel File containing Sales Info For GIS</h2>
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          <strong>Error!</strong> {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+<a href="{% static 'bd_map/files/Division_District_Upazilla_hiarachy.xlsx' %}"
+   title="Download and Edit the last three columns">
+    <button>Download Sample Excel File</button>
+</a>
+<form action="{% url 'bd_map:index' %}" method="post"
+      enctype="multipart/form-data" onsubmit="return validateFileExtension(this.excel_file)" onload="this.reset()">
+    {% csrf_token %}
+    <input type="file"
+           id="file"
+           title="Upload excel file"
+           accept=".xls,.xlsx"
+           name="excel_file"
+           onchange="return validateFileExtension(this)"
+           required="required">
+    <input type="submit"
+           value="Upload"
+
+    >
+</form>
+<script>
+     function validateFileExtension(fld) {
+    if(!/(\.xls|\.xlsx)$/i.test(fld.value)) {
+        alert("Invalid  file type.");
+        fld.form.reset();
+        fld.focus();
+        return false;
+    }
+    return true;
+ }
+</script>
+
+</body>
+</html>
