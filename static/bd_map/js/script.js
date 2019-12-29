@@ -20,10 +20,10 @@
             $color_code_low_inc = "red";
 
             /* range 0 - 2k , 2k - 4k , 4k + */
-            if ($m1_inc > 0 && $m1_inc < 2000) {
+            if ($m1_inc >= 0 && $m1_inc < 2000) {
                 $first_month_inc_html = "<br><span style='color:" + $color_code_low_inc + ";'>Month 1 : " + $m1_inc + " BDT</span><br>";
                 console.log("here 1" + $m1_inc);
-            } else if ($m1_inc > 2000 && $m1_inc < 4000) {
+            } else if ($m1_inc >= 2000 && $m1_inc < 4000) {
                 $first_month_inc_html = "<br><span style='color:" + $color_code_medium_inc + ";'>Month 1 : " + $m1_inc + " BDT</span><br>";
                 console.log("here 2" + $m1_inc);
             } else {
@@ -31,10 +31,10 @@
                 console.log("here 3" + $m1_inc);
             }
 
-            if ($m2_inc > 0 && $m2_inc < 2000) {
+            if ($m2_inc >= 0 && $m2_inc < 2000) {
                 $second_month_inc_html = "<br><span style='color:" + $color_code_low_inc + ";'>Month 2 : " + $m2_inc + " BDT</span><br>";
                 console.log("here 1" + $m2_inc);
-            } else if ($m2_inc > 2000 && $m2_inc < 4000) {
+            } else if ($m2_inc >= 2000 && $m2_inc < 4000) {
                 $second_month_inc_html = "<br><span style='color:" + $color_code_medium_inc + ";'>Month 2 : " + $m2_inc + " BDT</span><br>";
                 console.log("here 2" + $m2_inc);
             } else {
